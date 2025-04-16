@@ -1,0 +1,413 @@
+Árvore Sintática (JSON):
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Return",
+            "value": null,
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "y",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ControlStructure",
+            "value": "if",
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "+",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "x",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "10",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Return",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Expression",
+                            "value": null,
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "y",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+Test Case 2: while (a - 5) { x = x * 2; }
+Tokens: [('KEYWORD', 'while'), ('SYMBOL', '('), ('IDENTIFIER', 'a'), ('OPERATOR', '-'), ('INTEGER', '5'), ('SYMBOL', ')'), ('SYMBOL', '{'), ('IDENTIFIER', 'x'), ('OPERATOR', '='), ('IDENTIFIER', 'x'), ('OPERATOR', '*'), ('INTEGER', '2'), ('SYMBOL', ';'), ('SYMBOL', '}')]
+✅ Código válido!
+Árvore Sintática (JSON):
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Assignment",
+            "value": null,
+            "children": [
+                {
+                    "type": "Identifier",
+                    "value": "x",
+                    "children": []
+                },
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "*",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "x",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "2",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ControlStructure",
+            "value": "while",
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "-",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "a",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "5",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Assignment",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "x",
+                            "children": []
+                        },
+                        {
+                            "type": "Expression",
+                            "value": null,
+                            "children": [
+                                {
+                                    "type": "Operator",
+                                    "value": "*",
+                                    "children": [
+                                        {
+                                            "type": "Identifier",
+                                            "value": "x",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "Integer",
+                                            "value": "2",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+Test Case 3: return (x + y) * z;
+Tokens: [('KEYWORD', 'return'), ('SYMBOL', '('), ('IDENTIFIER', 'x'), ('OPERATOR', '+'), ('IDENTIFIER', 'y'), ('SYMBOL', ')'), ('OPERATOR', '*'), ('IDENTIFIER', 'z'), ('SYMBOL', ';')]
+✅ Código válido!
+Árvore Sintática (JSON):
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Return",
+            "value": null,
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "*",
+                            "children": [
+                                {
+                                    "type": "Expression",
+                                    "value": null,
+                                    "children": [
+                                        {
+                                            "type": "Operator",
+                                            "value": "+",
+                                            "children": [
+                                                {
+                                                    "type": "Identifier",
+                                                    "value": "x",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "Identifier",
+                                                    "value": "y",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "value": "z",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+Test Case 4: x = 10 + 5;
+Tokens: [('IDENTIFIER', 'x'), ('OPERATOR', '='), ('INTEGER', '10'), ('OPERATOR', '+'), ('INTEGER', '5'), ('SYMBOL', ';')]     
+✅ Código válido!
+Árvore Sintática (JSON):
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Assignment",
+            "value": null,
+            "children": [
+                {
+                    "type": "Identifier",
+                    "value": "x",
+                    "children": []
+                },
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "+",
+                            "children": [
+                                {
+                                    "type": "Integer",
+                                    "value": "10",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "5",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+Test Case 5: if (n > 0) { n = n - 1; return result; }
+Tokens: [('KEYWORD', 'if'), ('SYMBOL', '('), ('IDENTIFIER', 'n'), ('OPERATOR', '>'), ('INTEGER', '0'), ('SYMBOL', ')'), ('SYMBOL', '{'), ('IDENTIFIER', 'n'), ('OPERATOR', '='), ('IDENTIFIER', 'n'), ('OPERATOR', '-'), ('INTEGER', '1'), ('SYMBOL', ';'), 
+('KEYWORD', 'return'), ('IDENTIFIER', 'result'), ('SYMBOL', ';'), ('SYMBOL', '}')]
+✅ Código válido!
+Árvore Sintática (JSON):
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Assignment",
+            "value": null,
+            "children": [
+                {
+                    "type": "Identifier",
+                    "value": "n",
+                    "children": []
+                },
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "-",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "n",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "1",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Return",
+            "value": null,
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "result",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ControlStructure",
+            "value": "if",
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": ">",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "n",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "0",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Assignment",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "n",
+                            "children": []
+                        },
+                        {
+                            "type": "Expression",
+                            "value": null,
+                            "children": [
+                                {
+                                    "type": "Operator",
+                                    "value": "-",
+                                    "children": [
+                                        {
+                                            "type": "Identifier",
+                                            "value": "n",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "Integer",
+                                            "value": "1",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Return",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Expression",
+                            "value": null,
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "result",
+                                    "children": []
+                                }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

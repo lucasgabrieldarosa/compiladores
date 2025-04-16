@@ -1,0 +1,134 @@
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Assignment",
+            "value": null,
+            "children": [
+                {
+                    "type": "Identifier",
+                    "value": "n",
+                    "children": []
+                },
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "-",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "n",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "1",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Return",
+            "value": null,
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "result",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ControlStructure",
+            "value": "if",
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": ">",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "n",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "0",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Assignment",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "n",
+                            "children": []
+                        },
+                        {
+                            "type": "Expression",
+                            "value": null,
+                            "children": [
+                                {
+                                    "type": "Operator",
+                                    "value": "-",
+                                    "children": [
+                                        {
+                                            "type": "Identifier",
+                                            "value": "n",
+                                            "children": []
+                                        },
+                                        {
+                                            "type": "Integer",
+                                            "value": "1",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Return",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Expression",
+                            "value": null,
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "result",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

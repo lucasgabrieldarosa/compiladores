@@ -1,0 +1,51 @@
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Return",
+            "value": null,
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "*",
+                            "children": [
+                                {
+                                    "type": "Expression",
+                                    "value": null,
+                                    "children": [
+                                        {
+                                            "type": "Operator",
+                                            "value": "+",
+                                            "children": [
+                                                {
+                                                    "type": "Identifier",
+                                                    "value": "x",
+                                                    "children": []
+                                                },
+                                                {
+                                                    "type": "Identifier",
+                                                    "value": "y",
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Identifier",
+                                    "value": "z",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

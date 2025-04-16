@@ -1,0 +1,39 @@
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Assignment",
+            "value": null,
+            "children": [
+                {
+                    "type": "Identifier",
+                    "value": "x",
+                    "children": []
+                },
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "+",
+                            "children": [
+                                {
+                                    "type": "Integer",
+                                    "value": "10",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "5",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
