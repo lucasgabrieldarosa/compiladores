@@ -145,7 +145,9 @@ test_cases = [
     "while (a - 5) { x = x * 2; }",
     "return (x + y) * z;",
     "x = 10 + 5;",
-    "if (n > 0) { n = n - 1; return result; }"
+    "if (n > 0) { n = n - 1; return result; }",
+    # Teste com erro
+    "y = x + 1; return z;"  
 ]
 
 os.makedirs("testes", exist_ok=True)

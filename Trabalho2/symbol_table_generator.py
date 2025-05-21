@@ -55,10 +55,13 @@ def process_node(node, symbol_table):
     elif node_type == "Assignment":
         # Declaração de variável
         identifier_node = node["children"][0]
+        expr_node = node["children"][1]
         if symbol_table.check_duplicate(identifier_node["value"]):
             print(f"Erro: Variável '{identifier_node['value']}' já declarada no escopo '{symbol_table.current_scope}'.")
         else:
             symbol_table.add_symbol(identifier_node["value"], "variable")
+        # Processa a expressão do lado direito para verificar uso de variáveis não declaradas
+        process_node(expr_node, symbol_table)
     elif node_type == "FunctionDeclaration":
         # Declaração de função
         function_name = node_value
@@ -83,18 +86,18 @@ def process_node(node, symbol_table):
             if expected_params != actual_params:
                 print(f"Erro: Tipos de parâmetros incorretos na chamada da função '{node_value}'.")
     elif node_type == "Return":
-        # Verifica tipo de retorno
-        return_type = node.get("returnType")
-        if symbol_table.current_scope != "global":
-            function_symbol = symbol_table.find_symbol(symbol_table.current_scope)
-            if function_symbol and function_symbol.get("returnType") != return_type:
-                print(f"Erro: Tipo de retorno incorreto na função '{symbol_table.current_scope}'.")
+        # Processa todos os filhos do return (expressões/identificadores)
+        for child in node.get("children", []):
+            process_node(child, symbol_table)
     elif node_type == "ControlStructure":
         # Estruturas de controle (if, while)
         symbol_table.enter_scope(node_value)
         for child in node.get("children", []):
             process_node(child, symbol_table)
         symbol_table.exit_scope()
+    elif node_type == "Expression" or node_type == "Operator":
+        for child in node.get("children", []):
+            process_node(child, symbol_table)
     else:
         # Processa os filhos do nó
         for child in node.get("children", []):

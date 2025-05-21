@@ -1,0 +1,56 @@
+{
+    "type": "Program",
+    "value": null,
+    "children": [
+        {
+            "type": "Assignment",
+            "value": null,
+            "children": [
+                {
+                    "type": "Identifier",
+                    "value": "y",
+                    "children": []
+                },
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Operator",
+                            "value": "+",
+                            "children": [
+                                {
+                                    "type": "Identifier",
+                                    "value": "x",
+                                    "children": []
+                                },
+                                {
+                                    "type": "Integer",
+                                    "value": "1",
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Return",
+            "value": null,
+            "children": [
+                {
+                    "type": "Expression",
+                    "value": null,
+                    "children": [
+                        {
+                            "type": "Identifier",
+                            "value": "z",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
